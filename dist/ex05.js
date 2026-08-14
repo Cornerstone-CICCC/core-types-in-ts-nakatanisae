@@ -1,41 +1,28 @@
+"use strict";
 // Exercise 5: Create an Enum
-
 // 1. Create an enum called `Day` with values representing the days of the week (e.g., Sunday, Monday, etc.).
 // 2. Declare variables using the `Day` enum to represent the current day and print it.
 // 3. Create an interface of `Race`, add some properties, like participants, first, second and third places, and also the `day` of the race using the enum.
-
-enum Day {
-    Sunday = "SUNDAY",
-    Monday = "MONDAY",
-    Tuesday = "TUESDAY",
-    Wednesday = "WEDNESDAY",
-    Thursday = "THURSDAY",
-    Friday = "FRIDAY",
-    Saturday = "SATURDAY"
-}
-
+var Day;
+(function (Day) {
+    Day["Sunday"] = "SUNDAY";
+    Day["Monday"] = "MONDAY";
+    Day["Tuesday"] = "TUESDAY";
+    Day["Wednesday"] = "WEDNESDAY";
+    Day["Thursday"] = "THURSDAY";
+    Day["Friday"] = "FRIDAY";
+    Day["Saturday"] = "SATURDAY";
+})(Day || (Day = {}));
 const currentDay = {
     month: "August",
     date: "14th",
     day: Day.Friday
-}
-
-interface Race {
-    participants: string[],
-    firstPlace: string,
-    secondPlace: string,
-    thirdPlace: string,
-    eventDay: Day
-
-}
-
-const race: Race = {
-    participants: ["John","Jane","Max", "Lisa", "James"],
+};
+const race = {
+    participants: ["John", "Jane", "Max", "Lisa", "James"],
     firstPlace: "John",
     secondPlace: "Lisa",
     thirdPlace: "Max",
     eventDay: Day.Saturday,
-    
-}
-
-console.log(race)
+};
+console.log(race);
